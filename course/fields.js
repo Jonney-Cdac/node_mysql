@@ -16,13 +16,13 @@ connection.connect((error)=>{
     }else{
         console.log("Connection established successfully!!");
         
-        const sql = "Select * from softwares";        //Only specific content
+        const sql = "Select * from softwares";        
         
         connection.query(sql,(error,result,fields)=>{
             if(error){
                 console.log(error);
             }else{
-                console.log(fields[1].name);
+                console.log(fields[1].name);                 //Fields that are needed are added.           
                 console.log("--------------------");
                 result.map((results)=>{
                     console.log(results.name);
