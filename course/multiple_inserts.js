@@ -20,16 +20,14 @@ connection.connect((error)=>{
         //Create record in Table
         const sql = "INSERT INTO softwares (name ,cost,description) VALUES ?";
         const values = [
-            ['Mongo',1521.24,"It is a database software."],
-            ['Gatsby',4321.65,"It is a frontend react framework."],
-            ['Git',120.24,"It is a version control system."],
-            ['Vue.js',2547.35,"It is a Frontend framework."],
+            ['SpringBoot',1521.24,"It is a IDE."],
         ];
         connection.query(sql,[values],(error,result)=>{
             if(error){
                 console.log(error);
             }else{
                 console.log("Multiple records inserted !!");
+                console.log("Number of records inserted !!"+ result.affectedRows);
             }
         });
     }
